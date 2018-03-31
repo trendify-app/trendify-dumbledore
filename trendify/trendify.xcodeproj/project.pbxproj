@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820B206FE81100F61F04 /* HomeViewController.swift */; };
 		27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */; };
-		27A9BE2E206FE68F00A9F72F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9BE2D206FE68F00A9F72F /* ViewController.swift */; };
 		27A9BE31206FE68F00A9F72F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE2F206FE68F00A9F72F /* Main.storyboard */; };
 		27A9BE33206FE68F00A9F72F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE32206FE68F00A9F72F /* Assets.xcassets */; };
 		27A9BE36206FE68F00A9F72F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE34206FE68F00A9F72F /* LaunchScreen.storyboard */; };
+		6658F66C5781B1E567D9CAD2 /* Pods_trendify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F96DFF5A33FF08ABF4614B9 /* Pods_trendify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		273D820B206FE81100F61F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		27A9BE28206FE68F00A9F72F /* trendify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trendify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27A9BE2D206FE68F00A9F72F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27A9BE30206FE68F00A9F72F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27A9BE32206FE68F00A9F72F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27A9BE35206FE68F00A9F72F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27A9BE37206FE68F00A9F72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F96DFF5A33FF08ABF4614B9 /* Pods_trendify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trendify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC13405AEF779B98DC244667 /* Pods-trendify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trendify.release.xcconfig"; path = "Pods/Target Support Files/Pods-trendify/Pods-trendify.release.xcconfig"; sourceTree = "<group>"; };
+		FB99517A7F1D92C449065A98 /* Pods-trendify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trendify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trendify/Pods-trendify.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6658F66C5781B1E567D9CAD2 /* Pods_trendify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2378013A413B9DDF256CC70F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB99517A7F1D92C449065A98 /* Pods-trendify.debug.xcconfig */,
+				EC13405AEF779B98DC244667 /* Pods-trendify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		273D8209206FE7AD00F61F04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */,
+				27A9BE32206FE68F00A9F72F /* Assets.xcassets */,
+				27A9BE34206FE68F00A9F72F /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		273D820A206FE7D300F61F04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27A9BE2F206FE68F00A9F72F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		273D820D206FE81A00F61F04 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				273D820B206FE81100F61F04 /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		27A9BE1F206FE68F00A9F72F = {
 			isa = PBXGroup;
 			children = (
 				27A9BE2A206FE68F00A9F72F /* trendify */,
 				27A9BE29206FE68F00A9F72F /* Products */,
+				2378013A413B9DDF256CC70F /* Pods */,
+				6AEFA6EA7983075EB6B6EAF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +96,20 @@
 		27A9BE2A206FE68F00A9F72F /* trendify */ = {
 			isa = PBXGroup;
 			children = (
-				27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */,
-				27A9BE2D206FE68F00A9F72F /* ViewController.swift */,
-				27A9BE2F206FE68F00A9F72F /* Main.storyboard */,
-				27A9BE32206FE68F00A9F72F /* Assets.xcassets */,
-				27A9BE34206FE68F00A9F72F /* LaunchScreen.storyboard */,
+				273D820D206FE81A00F61F04 /* View Controllers */,
+				273D820A206FE7D300F61F04 /* Views */,
+				273D8209206FE7AD00F61F04 /* Supporting Files */,
 				27A9BE37206FE68F00A9F72F /* Info.plist */,
 			);
 			path = trendify;
+			sourceTree = "<group>";
+		};
+		6AEFA6EA7983075EB6B6EAF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F96DFF5A33FF08ABF4614B9 /* Pods_trendify.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27A9BE3A206FE68F00A9F72F /* Build configuration list for PBXNativeTarget "trendify" */;
 			buildPhases = (
+				9FE1106940F1C97A31FD8011 /* [CP] Check Pods Manifest.lock */,
 				27A9BE24206FE68F00A9F72F /* Sources */,
 				27A9BE25206FE68F00A9F72F /* Frameworks */,
 				27A9BE26206FE68F00A9F72F /* Resources */,
+				5102B49338BBCAE89A4105BA /* [CP] Embed Pods Frameworks */,
+				E430AE0A62424BD92CCD8286 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +182,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5102B49338BBCAE89A4105BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-trendify/Pods-trendify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trendify/Pods-trendify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FE1106940F1C97A31FD8011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trendify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E430AE0A62424BD92CCD8286 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trendify/Pods-trendify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27A9BE24206FE68F00A9F72F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A9BE2E206FE68F00A9F72F /* ViewController.swift in Sources */,
 				27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */,
+				273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +377,7 @@
 		};
 		27A9BE3B206FE68F00A9F72F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB99517A7F1D92C449065A98 /* Pods-trendify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +393,7 @@
 		};
 		27A9BE3C206FE68F00A9F72F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC13405AEF779B98DC244667 /* Pods-trendify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
