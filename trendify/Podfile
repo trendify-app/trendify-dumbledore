@@ -6,6 +6,7 @@ target 'trendify' do
   use_frameworks!
 
   # Pods for trendify
-  pod 'Starscream', '~> 3.0.2'
+  pod 'Socket.IO-Client-Swift', '~> 13.1.0'
+  pod 'TextFieldEffects'
 
 end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820B206FE81100F61F04 /* HomeViewController.swift */; };
+		273D820F20700EE500F61F04 /* JoinSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820E20700EE500F61F04 /* JoinSessionViewController.swift */; };
+		273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82102070166D00F61F04 /* HostSessionViewController.swift */; };
 		27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */; };
 		27A9BE31206FE68F00A9F72F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE2F206FE68F00A9F72F /* Main.storyboard */; };
 		27A9BE33206FE68F00A9F72F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE32206FE68F00A9F72F /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		273D820B206FE81100F61F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		273D820E20700EE500F61F04 /* JoinSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionViewController.swift; sourceTree = "<group>"; };
+		273D82102070166D00F61F04 /* HostSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSessionViewController.swift; sourceTree = "<group>"; };
 		27A9BE28206FE68F00A9F72F /* trendify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trendify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27A9BE30206FE68F00A9F72F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				273D820B206FE81100F61F04 /* HomeViewController.swift */,
+				273D820E20700EE500F61F04 /* JoinSessionViewController.swift */,
+				273D82102070166D00F61F04 /* HostSessionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,11 +196,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-trendify/Pods-trendify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,8 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273D820F20700EE500F61F04 /* JoinSessionViewController.swift in Sources */,
 				27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */,
 				273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */,
+				273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
