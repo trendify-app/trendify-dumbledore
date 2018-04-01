@@ -11,14 +11,17 @@ import UIKit
 class PlayerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var voteLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func formatCellForName(name: String) {
         self.nicknameLabel.text = name
+    }
+    
+    func formatForPlayer(player: Player) {
+        self.nicknameLabel.text = player.name
+        self.voteLabel.text = "Vote: \(player.vote)"
+        self.scoreLabel.text = "\(player.score)"
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272F8E1E2070D121000613A5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272F8E1D2070D121000613A5 /* Player.swift */; };
 		273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820B206FE81100F61F04 /* HomeViewController.swift */; };
 		273D820F20700EE500F61F04 /* JoinSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820E20700EE500F61F04 /* JoinSessionViewController.swift */; };
 		273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82102070166D00F61F04 /* HostSessionViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272F8E1D2070D121000613A5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		273D820B206FE81100F61F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		273D820E20700EE500F61F04 /* JoinSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionViewController.swift; sourceTree = "<group>"; };
 		273D82102070166D00F61F04 /* HostSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSessionViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,15 @@
 				EC13405AEF779B98DC244667 /* Pods-trendify.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		272F8E1C2070D0A0000613A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				272F8E1D2070D121000613A5 /* Player.swift */,
+			);
+			name = Model;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		273D8209206FE7AD00F61F04 /* Supporting Files */ = {
@@ -126,6 +137,7 @@
 			children = (
 				273D820D206FE81A00F61F04 /* View Controllers */,
 				273D820A206FE7D300F61F04 /* Views */,
+				272F8E1C2070D0A0000613A5 /* Model */,
 				273D82182070667200F61F04 /* Client */,
 				273D8209206FE7AD00F61F04 /* Supporting Files */,
 				27A9BE37206FE68F00A9F72F /* Info.plist */,
@@ -286,6 +298,7 @@
 				27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */,
 				273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */,
 				273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */,
+				272F8E1E2070D121000613A5 /* Player.swift in Sources */,
 				273D82172070666200F61F04 /* APIFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

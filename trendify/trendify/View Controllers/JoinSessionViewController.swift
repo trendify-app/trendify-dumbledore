@@ -17,6 +17,7 @@ class JoinSessionViewController: UIViewController, UITextFieldDelegate, WebSocke
     @IBOutlet weak var joinSessionButton: UIButton!
     
     let socketManager = WebSocketManager()
+    var aPass: String!
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -53,8 +54,8 @@ class JoinSessionViewController: UIViewController, UITextFieldDelegate, WebSocke
                     return
                 }
                 
-                let aPass = json["access_pass"].stringValue
-                self.socketManager.connectToWS(accessPass: aPass, nickname: nname)
+                self.aPass = json["access_pass"].stringValue
+                self.socketManager.connectToWS(accessPass: self.aPass, nickname: nname)
             })
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill all text fields", preferredStyle: .alert)
@@ -69,7 +70,8 @@ class JoinSessionViewController: UIViewController, UITextFieldDelegate, WebSocke
         let lobbyVC = self.storyboard?.instantiateViewController(withIdentifier: "lobbyVC") as! LobbyViewController
         lobbyVC.lobbyCode = roomNumberTextField.text
         lobbyVC.userNName = nicknameTextField.text
-        lobbyVC.socketManager2.delegate = lobbyVC
+        lobbyVC.aPass = aPass
+        lobbyVC.socketManager.delegate = lobbyVC
         self.navigationController?.pushViewController(lobbyVC, animated: true)
     }
     
@@ -77,4 +79,15 @@ class JoinSessionViewController: UIViewController, UITextFieldDelegate, WebSocke
         
     }
     
+    func newRound(number: Int) {
+        
+    }
+    
+    func stateDidChange(state: String) {
+         
+    }
+    
+    func newChallengeWord(word: String) {
+         
+    }
 }

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class HostSessionViewController: UIViewController {
 
+    @IBOutlet weak var nnameTextField: IsaoTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,4 +21,9 @@ class HostSessionViewController: UIViewController {
         self.navigationController?.view.backgroundColor = UIColor.clear
     }
 
+    @IBAction func hostButtonTapped(_ sender: UIButton) {
+        if let text = nnameTextField.text, text.count > 0 {
+            
+        }
+    }
 }

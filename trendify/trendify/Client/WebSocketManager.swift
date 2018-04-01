@@ -13,6 +13,9 @@ import SwiftyJSON
 protocol WebSocketDelegate: class {
     func didEnrollUser()
     func newUserList(users: [String])
+    func newRound(number: Int)
+    func stateDidChange(state: String)
+    func newChallengeWord(word: String)
 }
 
 class WebSocketManager {
@@ -48,10 +51,15 @@ class WebSocketManager {
         delegate?.didEnrollUser()
     }
     
+    func vote(query: String, accessPass: String) {
+        socket.emit("vote", accessPass, query)
+    }
+    
     func listenForUpdate() {
         socket.on("update") { (data, ack) in
             print("update found")
             let json = JSON(data)
+            print(json)
             for subJson in json {
                 if subJson.1["type"].stringValue == "users" {
                     var users = [String]()
@@ -59,8 +67,13 @@ class WebSocketManager {
                         users.append(name.1["name"].stringValue)
                     }
                     self.delegate?.newUserList(users: users)
-                } else if subJson.1["type"].stringValue == "round-number" {
-                    print(subJson.1)
+                } else if subJson.1["type"].stringValue == "round_number" {
+                    self.delegate?.newRound(number: subJson.1["round_number"].intValue)
+                } else if subJson.1["type"].stringValue == "state" {
+                    self.delegate?.stateDidChange(state: subJson.1["state"].stringValue)
+                } else if subJson.1["type"].stringValue == "challenge" {
+                    let word = subJson.1["word"].stringValue
+                    self.delegate?.newChallengeWord(word: word)
                 }
             }
         }

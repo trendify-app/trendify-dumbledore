@@ -21,7 +21,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var accessPass: String?
     var participants: [String]?
     
-    let socketManager2 = WebSocketManager()
+    var aPass: String!
+    
+    let socketManager = WebSocketManager()
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -39,8 +41,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         participantsTableView.dataSource = self
         
         
-        socketManager2.delegate = self
-        socketManager2.listenForUpdate()
+        socketManager.delegate = self
+        socketManager.listenForUpdate()
         
         lobbyCodeLabel.text = lobbyCode
         
@@ -58,7 +60,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: - Event Handlers
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
-        
+        let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
+        gameVC.aPass = aPass
+        navigationController?.pushViewController(gameVC, animated: true)
     }
     
     //MARK: - Table View Data Source Methods
@@ -83,6 +87,25 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func newUserList(users: [String]) {
         participants = users
         participantsTableView.reloadData()
+    }
+    
+    func newRound(number: Int) {
+//        if number == 0 {
+//            let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
+//            gameVC.aPass = aPass
+//            navigationController?.pushViewController(gameVC, animated: true)
+//        }
+    }
+    
+    func stateDidChange(state: String) {
+        
+    }
+    
+    func newChallengeWord(word: String) {
+        let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
+        gameVC.aPass = aPass
+        gameVC.trendyWord = word
+        navigationController?.pushViewController(gameVC, animated: true)
     }
     
 }

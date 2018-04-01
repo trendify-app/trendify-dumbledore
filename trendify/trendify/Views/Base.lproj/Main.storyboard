@@ -180,7 +180,6 @@ Would you like to host a game or join an existing session?</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="MnJ-Uz-EtV" eventType="touchUpInside" id="O6Z-FL-wSt"/>
                                     <action selector="joinSessionButtonTapped:" destination="KUp-zO-TpX" eventType="touchUpInside" id="Jq7-5V-PWh"/>
                                 </connections>
                             </button>
@@ -247,8 +246,7 @@ Would you like to host a game or join an existing session?</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="MnJ-Uz-EtV" eventType="touchUpInside" id="Yih-Bp-l5f"/>
-                                    <action selector="joinSessionButtonTapped:" destination="KUp-zO-TpX" eventType="touchUpInside" id="PvJ-sd-ubL"/>
+                                    <action selector="hostButtonTapped:" destination="Q2W-2T-NgC" eventType="touchUpInside" id="xXw-Gs-F1N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,6 +259,9 @@ Would you like to host a game or join an existing session?</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Quh-zh-0xk"/>
                     </view>
+                    <connections>
+                        <outlet property="nnameTextField" destination="XsD-1M-ITu" id="wHm-Rn-kuP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVo-3J-EKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,17 +292,38 @@ Would you like to host a game or join an existing session?</string>
                                     <constraint firstAttribute="height" constant="380" id="SRy-Q9-heu"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="participationCell" rowHeight="68" id="zzf-eM-02M" customClass="PlayerTableViewCell" customModule="trendify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="participationCell" rowHeight="88" id="zzf-eM-02M" customClass="PlayerTableViewCell" customModule="trendify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzf-eM-02M" id="Edw-pz-nxh">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sia-ew-JE3">
-                                                    <rect key="frame" x="15" y="11" width="313" height="46"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sia-ew-JE3">
+                                                    <rect key="frame" x="15" y="11" width="214" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vote: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyN-gD-3rM">
+                                                    <rect key="frame" x="15" y="42" width="214" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYR-f0-mbs">
+                                                    <rect key="frame" x="261" y="16" width="67" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lb-9T-z1R">
+                                                    <rect key="frame" x="245" y="38" width="83" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -309,6 +331,8 @@ Would you like to host a game or join an existing session?</string>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nicknameLabel" destination="sia-ew-JE3" id="lPG-qn-dF3"/>
+                                            <outlet property="scoreLabel" destination="2Lb-9T-z1R" id="JOS-1Q-zYu"/>
+                                            <outlet property="voteLabel" destination="VyN-gD-3rM" id="JMy-PB-vx4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -325,8 +349,6 @@ Would you like to host a game or join an existing session?</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="MnJ-Uz-EtV" eventType="touchUpInside" id="bOy-Rl-h0R"/>
-                                    <action selector="joinSessionButtonTapped:" destination="KUp-zO-TpX" eventType="touchUpInside" id="f2G-ra-Uft"/>
                                     <action selector="startGameButtonTapped:" destination="RvC-zv-r65" eventType="touchUpInside" id="nwd-Zz-esw"/>
                                 </connections>
                             </button>
@@ -379,15 +401,15 @@ Would you like to host a game or join an existing session?</string>
             </objects>
             <point key="canvasLocation" x="2844" y="14.77832512315271"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Create a query-->
         <scene sceneID="sA3-lG-dqv">
             <objects>
-                <viewController id="XQd-kG-9x1" customClass="GameViewController" customModule="trendify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameVC" title="Create a query" id="XQd-kG-9x1" customClass="GameViewController" customModule="trendify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mlE-ja-ntJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="prefix" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-4u-Vy6" customClass="IsaoTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="prefix" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-4u-Vy6" customClass="IsaoTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="31" y="112" width="313" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="Xj0-j9-rPg"/>
@@ -418,7 +440,7 @@ Would you like to host a game or join an existing session?</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="postfix" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-3v-XPP" customClass="IsaoTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="postfix" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-3v-XPP" customClass="IsaoTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="31" y="282" width="313" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="2w9-Y7-ZrT"/>
@@ -439,11 +461,11 @@ Would you like to host a game or join an existing session?</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-xG-a9D">
-                                <rect key="frame" x="301" y="44" width="43" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have 60s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-xG-a9D">
+                                <rect key="frame" x="219.33333333333334" y="44" width="124.66666666666666" height="37"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="124.67" id="Vbb-n9-hnW"/>
                                     <constraint firstAttribute="height" constant="37" id="dwL-oc-IgT"/>
-                                    <constraint firstAttribute="width" constant="43" id="ufn-v7-rqp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -461,14 +483,25 @@ Would you like to host a game or join an existing session?</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinButtonTapped:" destination="MnJ-Uz-EtV" eventType="touchUpInside" id="D2M-PQ-Y0M"/>
-                                    <action selector="joinSessionButtonTapped:" destination="KUp-zO-TpX" eventType="touchUpInside" id="H73-Af-e9p"/>
+                                    <action selector="submitButtonTapped:" destination="XQd-kG-9x1" eventType="touchUpInside" id="pxv-DO-rN3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for other players to submit their guess.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-t0-CYm">
+                                <rect key="frame" x="31" y="640" width="313" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Q79-vJ-lRE"/>
+                                    <constraint firstAttribute="width" constant="313" id="zob-C6-stf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9wY-C4-5bF" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="5QT-5C-swW"/>
+                            <constraint firstItem="phD-t0-CYm" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="8YZ-ko-XPX"/>
+                            <constraint firstItem="xcJ-FY-ya3" firstAttribute="top" secondItem="phD-t0-CYm" secondAttribute="bottom" constant="-130" id="CZW-ek-CFc"/>
                             <constraint firstItem="Qyp-ix-ldt" firstAttribute="trailing" secondItem="wHv-xG-a9D" secondAttribute="trailing" constant="31" id="PC9-8z-rWz"/>
                             <constraint firstItem="9wY-C4-5bF" firstAttribute="top" secondItem="BrN-4u-Vy6" secondAttribute="bottom" constant="18" id="QwK-OJ-HRq"/>
                             <constraint firstItem="hXd-3v-XPP" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="TZo-Po-nyp"/>
@@ -481,6 +514,14 @@ Would you like to host a game or join an existing session?</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qyp-ix-ldt"/>
                     </view>
+                    <connections>
+                        <outlet property="postfixTextField" destination="hXd-3v-XPP" id="hII-nX-64v"/>
+                        <outlet property="prefixTextField" destination="BrN-4u-Vy6" id="5ST-fF-A21"/>
+                        <outlet property="submitButton" destination="xcJ-FY-ya3" id="aSa-xX-pjP"/>
+                        <outlet property="timerLabel" destination="wHv-xG-a9D" id="PWn-7Q-oty"/>
+                        <outlet property="waitingLabel" destination="phD-t0-CYm" id="yKO-9T-JJP"/>
+                        <outlet property="wordLabel" destination="9wY-C4-5bF" id="uPi-es-utU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBW-5u-S3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
