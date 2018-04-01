@@ -75,7 +75,7 @@ class JoinSessionViewController: UIViewController, UITextFieldDelegate, WebSocke
         self.navigationController?.pushViewController(lobbyVC, animated: true)
     }
     
-    func newUserList(users: [String]) {
+    func newUserList(users: [Player]) {
         
     }
     

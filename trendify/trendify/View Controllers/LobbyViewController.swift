@@ -19,7 +19,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var lobbyCode: String!
     var userNName: String!
     var accessPass: String?
-    var participants: [String]?
+    var participants: [Player]?
     
     var aPass: String!
     
@@ -46,7 +46,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         lobbyCodeLabel.text = lobbyCode
         
-        participants = [userNName]
+        participants = [ Player(name: userNName, vote: nil, score: nil) ]
         participantsTableView.reloadData()
         
         if accessPass != nil {
@@ -76,7 +76,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kReuseIdentifier, for: indexPath) as! PlayerTableViewCell
-        cell.formatCellForName(name: participants![indexPath.row])
+        cell.formatForPlayer(player: participants![indexPath.row])
         return cell
     }
     
@@ -84,7 +84,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func didEnrollUser() {
     }
     
-    func newUserList(users: [String]) {
+    func newUserList(users: [Player]) {
         participants = users
         participantsTableView.reloadData()
     }

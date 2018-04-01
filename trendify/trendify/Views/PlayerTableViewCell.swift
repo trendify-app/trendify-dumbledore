@@ -20,8 +20,8 @@ class PlayerTableViewCell: UITableViewCell {
     
     func formatForPlayer(player: Player) {
         self.nicknameLabel.text = player.name
-        self.voteLabel.text = "Vote: \(player.vote)"
-        self.scoreLabel.text = "\(player.score)"
+        self.voteLabel.text = "Vote: \(player.vote ?? "No vote yet")"
+        self.scoreLabel.text = "\(player.score ?? 0)"
     }
 
 }

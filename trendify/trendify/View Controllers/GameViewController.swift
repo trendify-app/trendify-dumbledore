@@ -75,7 +75,7 @@ class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelega
         
     }
     
-    func newUserList(users: [String]) {
+    func newUserList(users: [Player]) {
         
     }
     

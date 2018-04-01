@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol WebSocketDelegate: class {
     func didEnrollUser()
-    func newUserList(users: [String])
+    func newUserList(users: [Player])
     func newRound(number: Int)
     func stateDidChange(state: String)
     func newChallengeWord(word: String)
@@ -62,9 +62,16 @@ class WebSocketManager {
             print(json)
             for subJson in json {
                 if subJson.1["type"].stringValue == "users" {
-                    var users = [String]()
-                    for name in subJson.1["users"] {
-                        users.append(name.1["name"].stringValue)
+                    var users = [Player]()
+                    for user in subJson.1["users"] {
+                        let nname = user.1["name"].stringValue
+                        if user.1["score"].exists() {
+                            let player = Player(name: nname, vote: user.1["vote"].stringValue, score: user.1["score"].intValue)
+                            users.append(player)
+                        } else {
+                            let player = Player(name: nname, vote: nil, score: nil)
+                            users.append(player)
+                        }
                     }
                     self.delegate?.newUserList(users: users)
                 } else if subJson.1["type"].stringValue == "round_number" {
