@@ -8,20 +8,23 @@
 
 import UIKit
 import TextFieldEffects
+import SnapTimer
 
 class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelegate {
     
     @IBOutlet weak var prefixTextField: IsaoTextField!
     @IBOutlet weak var postfixTextField: IsaoTextField!
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var waitingLabel: UILabel!
+    @IBOutlet weak var timerView: SnapTimerView!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var trendyWord: String!
     var aPass: String!
     var currentState: String?
     
+    var lobbyVC: LobbyViewController!
     let socketManager = WebSocketManager()
     
     override func viewDidLoad() {
@@ -30,8 +33,16 @@ class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelega
         prefixTextField.delegate = self
         postfixTextField.delegate = self
         socketManager.delegate = self
+        socketManager.listenForUpdate()
         wordLabel.text = trendyWord
         waitingLabel.isHidden = true
+        
+        
+        progressBar.setProgress(0.01, animated: true)
+        UIView.animate(withDuration: 60, delay: 0, options: .curveLinear, animations: {
+            self.progressBar.setProgress(1.0, animated: true)
+        }, completion: nil)
+        
     }
     
     //MARK: - Text Fields Delegate
@@ -76,7 +87,10 @@ class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelega
     }
     
     func newUserList(users: [Player]) {
-        
+        if currentState == "intermission" {
+            self.navigationController?.popViewController(animated: true)
+            //self.lobbyVC.participantsTableView.reloadData()
+        }
     }
     
     func newRound(number: Int) {

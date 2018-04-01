@@ -105,6 +105,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
         gameVC.aPass = aPass
         gameVC.trendyWord = word
+        gameVC.lobbyVC = self
         navigationController?.pushViewController(gameVC, animated: true)
     }
     

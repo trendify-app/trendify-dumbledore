@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -461,16 +462,6 @@ Would you like to host a game or join an existing session?</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have 60s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-xG-a9D">
-                                <rect key="frame" x="219.33333333333334" y="44" width="124.66666666666666" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="124.67" id="Vbb-n9-hnW"/>
-                                    <constraint firstAttribute="height" constant="37" id="dwL-oc-IgT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcJ-FY-ya3">
                                 <rect key="frame" x="89" y="554" width="197" height="41"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -496,17 +487,26 @@ Would you like to host a game or join an existing session?</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-He-vgn">
+                                <rect key="frame" x="16" y="44" width="343" height="6"/>
+                                <color key="tintColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="tZQ-lC-KCy"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9wY-C4-5bF" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="5QT-5C-swW"/>
                             <constraint firstItem="phD-t0-CYm" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="8YZ-ko-XPX"/>
                             <constraint firstItem="xcJ-FY-ya3" firstAttribute="top" secondItem="phD-t0-CYm" secondAttribute="bottom" constant="-130" id="CZW-ek-CFc"/>
-                            <constraint firstItem="Qyp-ix-ldt" firstAttribute="trailing" secondItem="wHv-xG-a9D" secondAttribute="trailing" constant="31" id="PC9-8z-rWz"/>
                             <constraint firstItem="9wY-C4-5bF" firstAttribute="top" secondItem="BrN-4u-Vy6" secondAttribute="bottom" constant="18" id="QwK-OJ-HRq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ymc-He-vgn" secondAttribute="trailing" id="Sry-3W-WdC"/>
+                            <constraint firstItem="ymc-He-vgn" firstAttribute="top" secondItem="Qyp-ix-ldt" secondAttribute="top" id="TSg-Ld-Ngb"/>
                             <constraint firstItem="hXd-3v-XPP" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="TZo-Po-nyp"/>
+                            <constraint firstItem="ymc-He-vgn" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="X9o-ln-XSZ"/>
                             <constraint firstItem="xcJ-FY-ya3" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="aNE-Fv-eeq"/>
-                            <constraint firstItem="wHv-xG-a9D" firstAttribute="top" secondItem="Qyp-ix-ldt" secondAttribute="top" id="mq4-PR-Q4S"/>
+                            <constraint firstItem="ymc-He-vgn" firstAttribute="leading" secondItem="mlE-ja-ntJ" secondAttribute="leadingMargin" id="aaq-wf-stm"/>
                             <constraint firstItem="BrN-4u-Vy6" firstAttribute="centerX" secondItem="Qyp-ix-ldt" secondAttribute="centerX" id="t4X-uK-LDq"/>
                             <constraint firstItem="BrN-4u-Vy6" firstAttribute="top" secondItem="Qyp-ix-ldt" secondAttribute="top" constant="68" id="u2C-Hp-E7l"/>
                             <constraint firstItem="hXd-3v-XPP" firstAttribute="top" secondItem="9wY-C4-5bF" secondAttribute="bottom" constant="18" id="z8F-JW-VkV"/>
@@ -517,8 +517,8 @@ Would you like to host a game or join an existing session?</string>
                     <connections>
                         <outlet property="postfixTextField" destination="hXd-3v-XPP" id="hII-nX-64v"/>
                         <outlet property="prefixTextField" destination="BrN-4u-Vy6" id="5ST-fF-A21"/>
+                        <outlet property="progressBar" destination="ymc-He-vgn" id="Q1i-a6-KLP"/>
                         <outlet property="submitButton" destination="xcJ-FY-ya3" id="aSa-xX-pjP"/>
-                        <outlet property="timerLabel" destination="wHv-xG-a9D" id="PWn-7Q-oty"/>
                         <outlet property="waitingLabel" destination="phD-t0-CYm" id="yKO-9T-JJP"/>
                         <outlet property="wordLabel" destination="9wY-C4-5bF" id="uPi-es-utU"/>
                     </connections>
