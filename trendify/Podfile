@@ -8,5 +8,7 @@ target 'trendify' do
   # Pods for trendify
   pod 'Socket.IO-Client-Swift', '~> 13.1.0'
   pod 'TextFieldEffects'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

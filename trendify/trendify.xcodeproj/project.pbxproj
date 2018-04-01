@@ -10,6 +10,11 @@
 		273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820B206FE81100F61F04 /* HomeViewController.swift */; };
 		273D820F20700EE500F61F04 /* JoinSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D820E20700EE500F61F04 /* JoinSessionViewController.swift */; };
 		273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82102070166D00F61F04 /* HostSessionViewController.swift */; };
+		273D82132070246F00F61F04 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82122070246F00F61F04 /* LobbyViewController.swift */; };
+		273D821520702A1300F61F04 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D821420702A1300F61F04 /* PlayerTableViewCell.swift */; };
+		273D82172070666200F61F04 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82162070666200F61F04 /* APIFetcher.swift */; };
+		273D821A2070774F00F61F04 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D82192070774F00F61F04 /* WebSocketManager.swift */; };
+		273D821C2070A3F800F61F04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D821B2070A3F800F61F04 /* GameViewController.swift */; };
 		27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */; };
 		27A9BE31206FE68F00A9F72F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE2F206FE68F00A9F72F /* Main.storyboard */; };
 		27A9BE33206FE68F00A9F72F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A9BE32206FE68F00A9F72F /* Assets.xcassets */; };
@@ -21,6 +26,11 @@
 		273D820B206FE81100F61F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		273D820E20700EE500F61F04 /* JoinSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionViewController.swift; sourceTree = "<group>"; };
 		273D82102070166D00F61F04 /* HostSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSessionViewController.swift; sourceTree = "<group>"; };
+		273D82122070246F00F61F04 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		273D821420702A1300F61F04 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		273D82162070666200F61F04 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
+		273D82192070774F00F61F04 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		273D821B2070A3F800F61F04 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		27A9BE28206FE68F00A9F72F /* trendify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trendify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A9BE2B206FE68F00A9F72F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27A9BE30206FE68F00A9F72F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				27A9BE2F206FE68F00A9F72F /* Main.storyboard */,
+				273D821420702A1300F61F04 /* PlayerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -77,8 +88,19 @@
 				273D820B206FE81100F61F04 /* HomeViewController.swift */,
 				273D820E20700EE500F61F04 /* JoinSessionViewController.swift */,
 				273D82102070166D00F61F04 /* HostSessionViewController.swift */,
+				273D82122070246F00F61F04 /* LobbyViewController.swift */,
+				273D821B2070A3F800F61F04 /* GameViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		273D82182070667200F61F04 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				273D82162070666200F61F04 /* APIFetcher.swift */,
+				273D82192070774F00F61F04 /* WebSocketManager.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		27A9BE1F206FE68F00A9F72F = {
@@ -104,6 +126,7 @@
 			children = (
 				273D820D206FE81A00F61F04 /* View Controllers */,
 				273D820A206FE7D300F61F04 /* Views */,
+				273D82182070667200F61F04 /* Client */,
 				273D8209206FE7AD00F61F04 /* Supporting Files */,
 				27A9BE37206FE68F00A9F72F /* Info.plist */,
 			);
@@ -196,14 +219,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-trendify/Pods-trendify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,10 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273D821520702A1300F61F04 /* PlayerTableViewCell.swift in Sources */,
 				273D820F20700EE500F61F04 /* JoinSessionViewController.swift in Sources */,
+				273D82132070246F00F61F04 /* LobbyViewController.swift in Sources */,
+				273D821A2070774F00F61F04 /* WebSocketManager.swift in Sources */,
+				273D821C2070A3F800F61F04 /* GameViewController.swift in Sources */,
 				27A9BE2C206FE68F00A9F72F /* AppDelegate.swift in Sources */,
 				273D820C206FE81100F61F04 /* HomeViewController.swift in Sources */,
 				273D82112070166D00F61F04 /* HostSessionViewController.swift in Sources */,
+				273D82172070666200F61F04 /* APIFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

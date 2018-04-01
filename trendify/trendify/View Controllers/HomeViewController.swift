@@ -35,18 +35,6 @@ class HomeViewController: UIViewController {
         self.navigationController?.view.backgroundColor = UIColor.clear
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        
-    }
-    
     func addBlurEffect() {
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)
@@ -65,6 +53,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func joinButtonTapped(_ sender: UIButton) {
+        
     }
     
 }
