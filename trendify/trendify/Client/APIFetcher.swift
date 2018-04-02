@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIFetcher {
     
     func joinSession(roomID: String, completion: @escaping(_ json: JSON?) -> Void) {
-        let url = "http://localhost:8080/api/sessions/join/\(roomID)"
+        let url = "http://trendify.tech:8080/api/sessions/join/\(roomID)"
         Alamofire.request(url, method: .put, parameters: nil, encoding: JSONEncoding.default).response { (res) in
             if let data = res.data {
                 let json = JSON(data)
@@ -27,7 +27,7 @@ class APIFetcher {
     }
     
     func joinSession(roomID: String, accessToken: String, completion: @escaping(_ json: JSON?) -> Void) {
-        let url = "http://localhost:8080/api/sessions/join/\(roomID)"
+        let url = "http://trendify.tech:8080/api/sessions/join/\(roomID)"
         let parameters = ["Authorization": accessToken]
         Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { (res) in
             if let data = res.data {
@@ -42,7 +42,7 @@ class APIFetcher {
     }
     
     func createSession(completion: @escaping(_ json: JSON?) -> Void) {
-        let url = "http://localhost:8080/api/sessions/create"
+        let url = "http://trendify.tech:8080/api/sessions/create"
         Alamofire.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default).response { (res) in
             if let data = res.data {
                 let json = JSON(data)

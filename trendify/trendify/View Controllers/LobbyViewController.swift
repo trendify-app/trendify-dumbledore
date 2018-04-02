@@ -90,11 +90,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func newRound(number: Int) {
-//        if number == 0 {
-//            let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
-//            gameVC.aPass = aPass
-//            navigationController?.pushViewController(gameVC, animated: true)
-//        }
+
     }
     
     func stateDidChange(state: String) {

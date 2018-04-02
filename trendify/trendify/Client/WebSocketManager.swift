@@ -20,7 +20,7 @@ protocol WebSocketDelegate: class {
 
 class WebSocketManager {
     
-    static let url = URL(string: "http://localhost:8080")!
+    static let url = URL(string: "http://trendify.tech:8080")!
     static let manager = SocketManager(socketURL: url)
     let socket = manager.defaultSocket
     

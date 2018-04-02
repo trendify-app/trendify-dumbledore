@@ -8,7 +8,6 @@
 
 import UIKit
 import TextFieldEffects
-import SnapTimer
 
 class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelegate {
     
@@ -17,7 +16,6 @@ class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelega
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var waitingLabel: UILabel!
-    @IBOutlet weak var timerView: SnapTimerView!
     @IBOutlet weak var progressBar: UIProgressView!
     
     var trendyWord: String!
@@ -89,7 +87,6 @@ class GameViewController: UIViewController, UITextFieldDelegate, WebSocketDelega
     func newUserList(users: [Player]) {
         if currentState == "intermission" {
             self.navigationController?.popViewController(animated: true)
-            //self.lobbyVC.participantsTableView.reloadData()
         }
     }
     
